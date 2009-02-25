@@ -1,4 +1,4 @@
+* ABNF in ABNF. Write an ABNF grammar to parse and create parser objects from an ABNF spec.
 * Test query parsing (with another ABNF parser).
 * On match, call a method (if defined) (or pass to a block like currently (if defined)).
 * Update to RFC 5234?
-* Write an ABNF grammar to parse and create ABNF specs

@@ -1,0 +1,25 @@
+
+== Overview ==
+
+This is a simple library for easily implementing parsers that are specified in Augmented Backus-Naur Form (ABNF).
+Many IETF RFCs specify protocols and other entities using ABNF. This library lets you use those core operators and
+rules almost directly as Ruby objects. An optional block can be specified for a rule. If the rule matches, it will
+pass the match into the block. This makes it possible to build up state as a parse progresses.
+
+This version of the library was written to RFC 2234, which is an obsoleted version of the RFC. Not too much
+changed in the subsequent versions however. I'm hoping to do a pass through soon and make sure this library
+is compliant with RFC 5234.
+
+Check out: http://tools.ietf.org/html/rfc5234 for more information.
+
+== Example ==
+
+For a detailed example, tests/url.rb contains a full URL parser using the ABNF grammar from RFC 3986. It parses
+a URL from a string returns a structure containing the components.
+
+== Caveats ==
+
+* There's no lookahead, so when using Alternate, specify your longest matches first if one of the smaller alternative
+matches could potentially fire.
+
+* It works on an 8-bit character basis - at least for now.

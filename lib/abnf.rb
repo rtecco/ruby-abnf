@@ -18,11 +18,11 @@ module ABNF
     end
     
     def until_end # &blk
-      i = @first
+      i = 0
       
       while true
-        i += 1
         yield i
+        i += 1
       end
     end
   end

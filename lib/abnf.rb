@@ -37,7 +37,7 @@ module ABNF
     end
     
     def first
-      @s[0]
+      @s[0].ord if @s[0]
     end
     
     def rest

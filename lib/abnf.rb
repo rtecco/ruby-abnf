@@ -208,8 +208,8 @@ module ABNF
   class DQuote < Char; def initialize; super(0x22) end end # double quote
   class HTab < Char; def initialize; super(0x9) end end # horizontal tab
   class SP < Char; def initialize; super(0x20) end end # space
-  class Octet < Range; def initialize; super(0, 255) end end # any 8-bit data value
-  class VChar < Range; def initialize; super(0x21, 0x7E) end end # visible (printing) characters
+  class Octet < Range; def initialize; super(0..255) end end # any 8-bit data value
+  class VChar < Range; def initialize; super(0x21..0x7E) end end # visible (printing) characters
   class WSP < Alternate; def initialize; super(SP.new, HTab.new) end end # whitespace
     
   class HexDigit < Alternate
